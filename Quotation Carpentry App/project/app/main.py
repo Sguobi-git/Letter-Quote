@@ -73,7 +73,9 @@ def login_signup_form():
                 st.session_state.authenticated = True
                 st.session_state.username = login_username
                 st.success("Logged in successfully!")
-                st.experimental_rerun()
+                # st.experimental_rerun()
+                from streamlit.runtime.scriptrunner import rerun
+                rerun()
             else:
                 st.error("Invalid username or password.")
 
